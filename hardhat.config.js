@@ -16,7 +16,7 @@ process.env.KOVAN_RPC_URL ||
  const PRIVATE_KEY =
     process.env.PRIVATE_KEY ||
     "0x11ee3108a03081fe260ecdc106554d09d9d1209bcafd46942b10e02943effc4a"
- const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY || ""
+ 
 
 
 /**
@@ -36,6 +36,9 @@ module.exports = {
             
             chainId: 4,
             blockConfirmations: 6,
+            etherscan:{
+              apiKey:"D49TN3SUB2MUKY29VUMB3IN8Q4R83R3JV3",
+            },
     },
   },
   solidity: "0.8.7",
@@ -43,11 +46,12 @@ module.exports = {
     deployer:{
       default:0,
     },
-    etherscan: {
-      apiKey: ETHERSCAN_API_KEY,
-  },
+   
     player:{
       default:1,
     },
+  },
+  mocha:{
+    timeout:200000,//200 seconds max
   }
 };
